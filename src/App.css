@@ -1,38 +1,37 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app {
+  display: grid;
+  grid-template-columns: 1fr 3fr; /* 25% for navbar-container, 75% for app-container */
+  gap: .6rem;
+  padding: .5rem;
+  background-color: #f9f9f9;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar-container {
+  background-color: white; 
+  border: .1rem solid white;
+  border-radius: .4rem;
+  padding: .5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app-container {
+  display: grid;
+  grid-template-rows: auto auto; /* Adjust this as needed for your layout */
+  gap: .4rem;
 }
+
+.card-container {
+  
+  background-color: #fff; /* Ensure cards have a similar background */
+  border: 1px solid #ccc;
+  border-radius: .4rem;
+  padding: .3rem;
+}
+
+.feature-container {
+  background-color: #fff; /* Ensure cards have a similar background */
+  border: 1px solid #4d3b3b;
+  border-radius: .4rem;
+  padding: .3rem;
+}
+
