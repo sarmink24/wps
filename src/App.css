@@ -12,6 +12,7 @@
   border: .1rem solid white;
   border-radius: .4rem;
   padding: .5rem;
+  width: 100%;
 }
 
 .app-container {
@@ -25,8 +26,13 @@
   background-color: #fff; /* Ensure cards have a similar background */
   border: 1px solid #ccc;
   border-radius: .4rem;
-  padding: .3rem;
+  padding: .5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .5rem; /* Adjust gap as needed */
 }
+
+
 
 .feature-container {
   background-color: #fff; /* Ensure cards have a similar background */
@@ -35,3 +41,9 @@
   padding: .3rem;
 }
 
+
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: 1fr; /* One section per row */
+  }
+}

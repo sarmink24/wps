@@ -8,7 +8,6 @@ const Navbar = () => {
         <li>Home</li>
         <li>Contact Us</li>
         <li>About Us</li>
-        <li>Section 1</li>
       </ul>
     </div>
   );
