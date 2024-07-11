@@ -1,17 +1,38 @@
 .section-container {
-  height: 100%;
-  width: 100%;
-  border: .1rem solid skyblue;
+  min-height: 50vh;
+  width: 80%;
+  border: .1rem solid navy;
   border-radius: .4rem;
-  
+  position: relative;
+  top: 0;
+  left: 20%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .3rem;
+  padding: .2rem;
 }
 
 .card {
   padding: .5rem;
+  min-height: 50%;
+  border: .1rem solid skyblue;
+  border-radius: .4rem;
 }
 
 .feature-div {
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+@media (max-width: 768px) {
+
+  .section-container {
+    width: 70%;
+    left: 30%;
+    display: grid;
+    grid-template-columns: 1fr;
+    
+  }
+  
 }

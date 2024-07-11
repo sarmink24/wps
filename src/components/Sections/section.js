@@ -2,23 +2,29 @@ import React from "react";
 import "./section.css";
 import { IoMdSearch, IoMdAddCircleOutline } from "react-icons/io";
 
-const Section = ({ sectionId, featureId, onSearchClick, onAddClick }) => {
+const Section = ({ sectionsData, onSearchClick, onAddClick }) => {
   return (
     <div className="section-container">
-      <div className="card">
-        <div className="card-header">
-          <h3>Section {sectionId}</h3>
-        </div>
-        <div className="card-body">
-          <div className="feature-div">
-            <p>Feature {featureId}</p>
-            <IoMdSearch onClick={() => onSearchClick(sectionId, featureId)} />
-            <IoMdAddCircleOutline
-              onClick={() => onAddClick(sectionId, featureId)}
-            />
+      {sectionsData.map((section) => (
+        <div className="card">
+          <div className="card-header">
+            <h3>Section {section.sectionId}</h3>
+          </div>
+          <div className="card-body">
+            <div className="feature-div">
+              <p>Feature {section.featureId}</p>
+              <IoMdSearch
+                onClick={() =>
+                  onSearchClick(section.sectionId, section.featureId)
+                }
+              />
+              <IoMdAddCircleOutline
+                onClick={() => onAddClick(section.sectionId, section.featureId)}
+              />
+            </div>
           </div>
         </div>
-      </div>
+      ))}
     </div>
   );
 };

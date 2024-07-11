@@ -2,9 +2,12 @@
 .navbar {
   background-color: white;
   height: 100vh; /* Full height of the viewport */
+  width: 20%;
   position: fixed; /* Fixed position */
   top: 0;
   left: 0;
+  /* border: .1rem solid skyblue;
+  border-radius: .5rem; */
 }
 
 .navbar ul {
@@ -27,6 +30,21 @@
 
 .navbar li:hover {
   background-color: #8ed7ee;
+}
+
+@media (max-width: 768px) {
+
+  .navbar {
+    background-color: white;
+    height: 100vh; /* Full height of the viewport */
+    width: 25%;
+    position: fixed; /* Fixed position */
+    top: 0;
+    left: 0;
+    /* border: .1rem solid skyblue;
+    border-radius: .5rem; */
+  }
+  
 }
 
 

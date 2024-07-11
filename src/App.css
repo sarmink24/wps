@@ -1,49 +1,4 @@
 .app {
-  display: grid;
-  grid-template-columns: 1fr 3fr; /* 25% for navbar-container, 75% for app-container */
-  gap: .6rem;
   padding: .5rem;
-  background-color: #f9f9f9;
   min-height: 100vh;
-}
-
-.navbar-container {
-  background-color: white; 
-  border: .1rem solid white;
-  border-radius: .4rem;
-  padding: .5rem;
-  width: 100%;
-}
-
-.app-container {
-  display: grid;
-  grid-template-rows: auto auto; /* Adjust this as needed for your layout */
-  gap: .4rem;
-}
-
-.card-container {
-  
-  background-color: #fff; /* Ensure cards have a similar background */
-  border: 1px solid #ccc;
-  border-radius: .4rem;
-  padding: .5rem;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: .5rem; /* Adjust gap as needed */
-}
-
-
-
-.feature-container {
-  background-color: #fff; /* Ensure cards have a similar background */
-  border: 1px solid #4d3b3b;
-  border-radius: .4rem;
-  padding: .3rem;
-}
-
-
-@media (max-width: 768px) {
-  .card-container {
-    grid-template-columns: 1fr; /* One section per row */
-  }
 }

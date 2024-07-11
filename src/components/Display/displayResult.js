@@ -1,8 +1,9 @@
 import React from "react";
+import "./displayResult.css";
 
 const DisplayResult = ({ message }) => {
   return (
-    <div className="section-container">
+    <div className="display-container">
       <div className="card">
         <div className="card-body">
           <div>{message}</div>
