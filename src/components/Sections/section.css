@@ -14,7 +14,7 @@
 
 .card {
   padding: .5rem;
-  min-height: 50%;
+  min-height: 50vh;
   border: .1rem solid skyblue;
   border-radius: .4rem;
 }
