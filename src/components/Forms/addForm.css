@@ -1,0 +1,79 @@
+/* Add this to your CSS file (e.g., addForm.css) */
+.form-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-header,
+  .form-footer {
+    margin-bottom: 1em;
+    text-align: center;
+  }
+  
+  .form-header h2 {
+    margin: 0;
+    font-size: 1.5em;
+  }
+  
+  .form-field {
+    margin-bottom: 1em;
+  }
+  
+  .form-field label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+  }
+  
+  .form-field input,
+  .form-field select {
+    width: 100%;
+    padding: 0.5em;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .form-field input[type="radio"] {
+    width: auto;
+  }
+  
+  .form-error {
+    color: red;
+    font-size: 0.875em;
+    margin-top: 0.5em;
+  }
+  
+  .form-footer {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .form-footer button {
+    padding: 0.75em 1.5em;
+    font-size: 1em;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 1em;
+  }
+  
+  .form-footer button[type="submit"] {
+    color: #fff;
+    background-color: #007bff;
+  }
+  
+  .form-footer button[type="submit"]:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .form-footer button[type="reset"] {
+    color: #fff;
+    background-color: #dc3545;
+  }
+  

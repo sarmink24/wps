@@ -26,13 +26,11 @@ function App() {
   }, []);
 
   const handleSearchClick = (sectionId, featureId) => {
-    setMessage(
-      `Search feature in Feature ${featureId} of Section ${sectionId}`
-    );
+    setMessage(`Search in Feature ${featureId} of Section ${sectionId}`);
   };
 
   const handleAddClick = (sectionId, featureId) => {
-    setMessage(`Add feature in Feature ${featureId} of Section ${sectionId}`);
+    setMessage(`Add Form for Feature ${featureId} of Section ${sectionId}`);
   };
 
   return (
