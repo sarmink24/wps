@@ -3,6 +3,7 @@ import "./App.css";
 import Navbar from "./components/Navbar/navbar";
 import Section from "./components/Sections/section";
 import CreateForm from "./components/Forms/createForm";
+import SearchForm from "./components/Forms/searchForm";
 
 function App() {
   const [sectionsData, setSectionsData] = useState([]);
@@ -48,6 +49,10 @@ function App() {
 
       {action === "Create" && (
             <CreateForm message={message} />
+          )}
+
+{action === "Search" && (
+            <SearchForm message={message} />
           )}
     </div>
   );
