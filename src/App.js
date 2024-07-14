@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar/navbar";
 import Section from "./components/Sections/section";
-import DisplayResult from "./components/Display/displayResult";
+import CreateForm from "./components/Forms/createForm";
 
 function App() {
   const [sectionsData, setSectionsData] = useState([]);
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState([]);
+
+  const [sectionId, featureId, action] = message;
 
   const fetchSectionsData = async () => {
     try {
@@ -25,12 +27,13 @@ function App() {
     fetchSectionsData();
   }, []);
 
+
   const handleSearchClick = (sectionId, featureId) => {
-    setMessage(`Search in Feature ${featureId} of Section ${sectionId}`);
+    setMessage([sectionId, featureId, 'Search']);
   };
 
   const handleAddClick = (sectionId, featureId) => {
-    setMessage(`Add Form for Feature ${featureId} of Section ${sectionId}`);
+    setMessage([sectionId, featureId, 'Create']);
   };
 
   return (
@@ -43,7 +46,9 @@ function App() {
         onAddClick={handleAddClick}
       />
 
-      <DisplayResult message={message} />
+      {action === "Create" && (
+            <CreateForm message={message} />
+          )}
     </div>
   );
 }

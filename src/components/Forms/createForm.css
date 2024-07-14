@@ -1,4 +1,18 @@
 /* Add this to your CSS file (e.g., addForm.css) */
+
+.display-container {
+  min-height: 50vh;
+  width: 80%;
+  border: .1rem solid navy;
+  border-radius: .4rem;
+  position: relative;
+  top: 0;
+  left: 20%;
+  margin-top: .5rem;
+  gap: .3rem;
+  padding: .2rem;
+}
+
 .form-container {
     max-width: 600px;
     margin: auto;
@@ -75,5 +89,15 @@
   .form-footer button[type="reset"] {
     color: #fff;
     background-color: #dc3545;
+  }
+
+  @media (max-width: 768px) {
+
+    .display-container {
+    width: 70%;
+      left: 30%;
+      
+    }
+    
   }
   
