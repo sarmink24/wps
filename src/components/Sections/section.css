@@ -25,6 +25,11 @@
   gap: 1rem;
 }
 
+.feature-div .icon {
+  cursor: pointer;
+  color: blue;
+}
+
 @media (max-width: 768px) {
 
   .section-container {

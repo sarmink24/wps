@@ -14,11 +14,13 @@ const Section = ({ sectionsData, onSearchClick, onAddClick }) => {
             <div className="feature-div">
               <p>Feature {section.featureId}</p>
               <IoMdSearch
+              className="icon"
                 onClick={() =>
                   onSearchClick(section.sectionId, section.featureId)
                 }
               />
               <IoMdAddCircleOutline
+              className="icon"
                 onClick={() => onAddClick(section.sectionId, section.featureId)}
               />
             </div>
