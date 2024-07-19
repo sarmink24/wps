@@ -8,7 +8,7 @@ const today = new Date();
 today.setHours(0, 0, 0, 0);
 
 // Define maximum end date allowed
-const maxEndDate = new Date('2024-12-01');
+const maxEndDate = new Date("2024-12-01");
 
 // Validation schema using Yup
 const validationSchema = Yup.object({
@@ -20,7 +20,7 @@ const validationSchema = Yup.object({
   endDate: Yup.date()
     .required("End date is required")
     .nullable()
-    .min(Yup.ref('startDate'), "End date can't be before start date") // End date validation
+    .min(Yup.ref("startDate"), "End date can't be before start date") // End date validation
     .max(maxEndDate, "End date can't be later than December 1, 2024"), // End date validation
 });
 
@@ -53,26 +53,40 @@ const SearchForm = ({ message }) => {
         <div className="display-container">
           <Form className="form-container">
             <div className="form-header">
-              <h2>{action} Form for Feature {featureId} of Section {sectionId}</h2>
+              <h2>
+                {action} Form for Feature {featureId} of Section {sectionId}
+              </h2>
             </div>
             <div className="form-field">
               <label htmlFor="name">Name</label>
               <Field type="text" name="name" />
-              <ErrorMessage name="name" component="div" className="form-error" />
+              <ErrorMessage
+                name="name"
+                component="div"
+                className="form-error"
+              />
             </div>
             <div className="form-field">
               <label htmlFor="startDate">Start Date</label>
-              <Field type="date" name="startDate" min={today.toISOString().split('T')[0]} />
-              <ErrorMessage name="startDate" component="div" className="form-error" />
+              <Field type="date" name="startDate" />
+              <ErrorMessage
+                name="startDate"
+                component="div"
+                className="form-error"
+              />
             </div>
             <div className="form-field">
               <label htmlFor="endDate">End Date</label>
-              <Field type="date" name="endDate" min={today.toISOString().split('T')[0]} max={maxEndDate.toISOString().split('T')[0]} />
-              <ErrorMessage name="endDate" component="div" className="form-error" />
+              <Field type="date" name="endDate" />
+              <ErrorMessage
+                name="endDate"
+                component="div"
+                className="form-error"
+              />
             </div>
             <div className="form-footer">
               <button
-                type="reset" 
+                type="reset"
                 onClick={() => handleReset({ resetForm })}
                 disabled={isSubmitting}
               >
