@@ -3,26 +3,18 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import "./createForm.css";
 
-// Get today's date with time set to 00:00:00 for accurate comparison
-const today = new Date();
-today.setHours(0, 0, 0, 0);
-
-// Define maximum end date allowed
-const maxEndDate = new Date("2024-12-01");
-
 // Validation schema using Yup
 const validationSchema = Yup.object({
   name: Yup.string().required("Required"),
   startDate: Yup.date()
     .required("Start date is required")
-    .nullable()
-    .min(today, "Start date can't be in the past"), // Start date validation
+    .nullable(), // Start date validation
   endDate: Yup.date()
     .required("End date is required")
     .nullable()
     .min(Yup.ref("startDate"), "End date can't be before start date") // End date validation
-    .max(maxEndDate, "End date can't be later than December 1, 2024"), // End date validation
 });
+
 
 // Initial form values
 const initialValues = {

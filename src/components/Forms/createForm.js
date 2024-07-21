@@ -8,7 +8,7 @@ const validationSchema = Yup.object({
   lastname: Yup.string().required("Required"),
   email: Yup.string().email("Invalid email address").required("Required"),
   phone: Yup.string()
-    .matches(/^\d+$/, "Phone number is not valid")
+    .matches(/^\d{10}$/, "Phone number must be exactly 10 digits")
     .required("Required"),
   gender: Yup.string().required("Required"),
   relationshipStatus: Yup.string().required("Required"),
@@ -28,9 +28,12 @@ const CreateForm = ({ message, onSubmit }) => {
         relationshipStatus: "",
       }}
       validationSchema={validationSchema}
-      onSubmit={(values, { setSubmitting }) => {
-        onSubmit(values); // Call the passed onSubmit function from App.js
-        setSubmitting(false);
+
+      onSubmit={(values, { setSubmitting, resetForm }) => {
+        onSubmit(values).then(() => {
+          resetForm(); // Reset the form fields
+          setSubmitting(false);
+        });
       }}
     >
       {({ isSubmitting, resetForm }) => (
