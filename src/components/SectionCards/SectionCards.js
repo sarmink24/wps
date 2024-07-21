@@ -1,12 +1,12 @@
 import React from "react";
-import "./section.css";
+import "./SectionCards.css";
 import { IoMdSearch, IoMdAddCircleOutline } from "react-icons/io";
 
-const Section = ({ sectionsData, onSearchClick, onAddClick }) => {
+const SectionCards = ({ sectionsData = [], onSectionClick = () => {} }) => {
   return (
-    <div className="section-container">
+    <div className="section-cards-container">
       {sectionsData.map((section) => (
-        <div className="card">
+        <div className="card" key={Math.random()}>
           <div className="card-header">
             <h3>Section {section.sectionId}</h3>
           </div>
@@ -14,14 +14,14 @@ const Section = ({ sectionsData, onSearchClick, onAddClick }) => {
             <div className="feature-div">
               <p>Feature {section.featureId}</p>
               <IoMdSearch
-              className="icon"
+                className="icon"
                 onClick={() =>
-                  onSearchClick(section.sectionId, section.featureId)
+                  onSectionClick(section.sectionId, section.featureId, "search")
                 }
               />
               <IoMdAddCircleOutline
-              className="icon"
-                onClick={() => onAddClick(section.sectionId, section.featureId)}
+                className="icon"
+                onClick={() => onSectionClick(section.sectionId, section.featureId, "create")}
               />
             </div>
           </div>
@@ -31,4 +31,4 @@ const Section = ({ sectionsData, onSearchClick, onAddClick }) => {
   );
 };
 
-export default Section;
+export default SectionCards;

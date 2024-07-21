@@ -24,8 +24,7 @@ const initialValues = {
 };
 
 // SearchForm component
-const SearchForm = ({ message }) => {
-  const [sectionId, featureId, action] = message;
+const  SectionAFeature1Search= ({ onSearch }) => {
 
   // Reset form function
   const handleReset = (formikProps) => {
@@ -37,7 +36,7 @@ const SearchForm = ({ message }) => {
       initialValues={initialValues}
       validationSchema={validationSchema}
       onSubmit={(values, { setSubmitting }) => {
-        console.log(values); // Log form values on submit
+        onSearch(values); // Call the onSearch function with form values
         setSubmitting(false);
       }}
     >
@@ -46,7 +45,7 @@ const SearchForm = ({ message }) => {
           <Form className="form-container">
             <div className="form-header">
               <h2>
-                {action} Form for Feature {featureId} of Section {sectionId}
+                Search Form for Feature 1 of Section A
               </h2>
             </div>
             <div className="form-field">
@@ -95,4 +94,4 @@ const SearchForm = ({ message }) => {
   );
 };
 
-export default SearchForm;
+export default SectionAFeature1Search;

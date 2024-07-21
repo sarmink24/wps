@@ -1,0 +1,4 @@
+- create api hook for section data, user data etc.
+- Make search call to backend api, get results back
+- render results in the work area appropriately
+

@@ -1,0 +1,28 @@
+.section-cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .3rem;
+}
+
+.card {
+  padding: .5rem;
+  height: 400px;
+  border: .1rem solid skyblue;
+  border-radius: .4rem;
+}
+
+.feature-div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.feature-div p {
+  font-size: 1.1em;
+}
+
+.feature-div .icon {
+  cursor: pointer;
+  color: blue;
+  font-size: 24px;
+}
