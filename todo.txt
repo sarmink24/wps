@@ -1,4 +1,5 @@
 - create api hook for section data, user data etc.
-- Make search call to backend api, get results back
+- Make sure you update App js to use api hook to get section data
+- Make search call to backend api using api hook, get results back
 - render results in the work area appropriately
 

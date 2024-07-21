@@ -10,15 +10,21 @@ const SectionWorkArea = ({ workAreaProps = { sectionId: '', featureId: '', actio
   const onSearchHandler = (formValues) => {
     console.log('---- search called with following values -----', formValues);
     // TODO: Make API call, and get results
+    // const resultData = useAPIHook(/api/search/values);
   }
 
   if (sectionId === "A" && featureId === "1" && action === "search") {
-    form = <SectionAFeature1Search onSearch={onSearchHandler}/>
+    form = <SectionAFeature1Search onSearch={onSearchHandler} />
   }
 
   return (
     <div className="section-work-area">
       {form}
+      {/* 
+      <ResultsTable data={resultsData}>
+
+      </ResultsTable>
+      */}
     </div>
   );
 };
