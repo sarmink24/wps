@@ -3,27 +3,11 @@ import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import SectionCards from "./components/SectionCards/SectionCards";
 import SectionWorkArea from "./components/SectionWorkArea/SectionWorkArea";
+import useSectionsData from "./Hooks/useSectionsData";
 
 function App() {
-  const [sectionsData, setSectionsData] = useState([]);
+  const { sectionsData } = useSectionsData();
   const [workAreaProps, setWorkAreaProps] = useState({});
-
-  const fetchSectionsData = async () => {
-    try {
-      const response = await fetch("http://localhost:5001/api/sections");
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      const data = await response.json();
-      setSectionsData(data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  useEffect(() => {
-    fetchSectionsData();
-  }, []);
 
   const handleSectionClick = (sectionId, featureId, action) => {
     setWorkAreaProps({

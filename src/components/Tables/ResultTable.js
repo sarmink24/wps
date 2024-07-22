@@ -1,10 +1,9 @@
-// UserData.js
 import React from 'react';
 import { useTable } from 'react-table';
-import './userData.css';
-import "../Forms/createForm.css";
+import './ResultTable.css';
+import "../Forms/SectionA/Feature1/createForm.css";
 
-const UserData = ({ columns, data }) => {
+const ResultTable = ({ columns, data }) => {
   // Use the useTable hook to create the table instance
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable({ columns, data });
 
@@ -37,4 +36,4 @@ const UserData = ({ columns, data }) => {
   );
 };
 
-export default UserData;
+export default ResultTable;
