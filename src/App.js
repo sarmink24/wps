@@ -3,7 +3,7 @@ import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import SectionCards from "./components/SectionCards/SectionCards";
 import SectionWorkArea from "./components/SectionWorkArea/SectionWorkArea";
-import useSectionsData from "./Hooks/useSectionsData";
+import useSectionsData from "./Hooks/useData";
 
 function App() {
   const { sectionsData } = useSectionsData();
@@ -13,7 +13,7 @@ function App() {
     setWorkAreaProps({
       sectionId,
       featureId,
-      action
+      action,
     });
   };
 
@@ -27,7 +27,6 @@ function App() {
         />
         <SectionWorkArea workAreaProps={workAreaProps} />
       </div>
-
     </div>
   );
 }

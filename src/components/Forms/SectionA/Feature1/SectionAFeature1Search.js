@@ -6,15 +6,12 @@ import "./createForm.css";
 // Validation schema using Yup
 const validationSchema = Yup.object({
   name: Yup.string().required("Required"),
-  startDate: Yup.date()
-    .required("Start date is required")
-    .nullable(), // Start date validation
+  startDate: Yup.date().required("Start date is required").nullable(), // Start date validation
   endDate: Yup.date()
     .required("End date is required")
     .nullable()
-    .min(Yup.ref("startDate"), "End date can't be before start date") // End date validation
+    .min(Yup.ref("startDate"), "End date can't be before start date"), // End date validation
 });
-
 
 // Initial form values
 const initialValues = {
@@ -24,11 +21,11 @@ const initialValues = {
 };
 
 // SearchForm component
-const  SectionAFeature1Search= ({ onSearch }) => {
-
+const SectionAFeature1Search = ({ onSearch, onReset }) => {
   // Reset form function
   const handleReset = (formikProps) => {
     formikProps.resetForm({ values: initialValues });
+    onReset(); // Call onReset callback
   };
 
   return (
@@ -44,9 +41,7 @@ const  SectionAFeature1Search= ({ onSearch }) => {
         <div className="display-container">
           <Form className="form-container">
             <div className="form-header">
-              <h2>
-                Search Form for Feature 1 of Section A
-              </h2>
+              <h2>Search Form for Feature 1 of Section A</h2>
             </div>
             <div className="form-field">
               <label htmlFor="name">Name</label>
