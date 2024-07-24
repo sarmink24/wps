@@ -26,6 +26,16 @@ const SectionWorkArea = ({
       />
     );
   }
+  
+  /*
+  if (sectionId === "A" && featureId === "1" && action === "create") {
+    form = (
+      <SectionAFeature1Create
+        onSubmit={onSubmitHandler}
+      />
+    );
+  }
+  */
 
   // Since we no longer have columns, need to create them here and pass to Results Table.
   // TODO: Column definitions should come from backend;
@@ -45,7 +55,7 @@ const SectionWorkArea = ({
         <>
           {loading && <div>Loading...</div>}
           {error && <div>Error: {error.message}</div>}
-          {data && <ResultTable data={data} columns={cols}/>}
+          {data && <ResultTable data={data} columns={cols} />}
         </>
       )}
     </div>

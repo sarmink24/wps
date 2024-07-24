@@ -1,3 +1,12 @@
 - for search form and results for section A Feature 1, make search fields and result table fields consistent.
 - when returned results are zero, make sure you show that message in the table (react-table surely has support for this)
 - change navbar code to make API call to get section names and features and render in a 2 level tree. We will hook them up to the main area later.
+
+- update create workflow to actually persist data in the backend, with the right field names.
+- the search call for particular section/feature combination should search this persisted data and return the right results.
+
+- For create. POST /api/section/{sectionId}/feature/{featureId} with body that has an object containing field name values, 
+- so name = "abc", startDate="01/01/2020"
+- For Search. GET /api/section ...very similar, but a GET call.
+
+
