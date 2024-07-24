@@ -1,5 +1,3 @@
-- create api hook for section data, user data etc.
-- Make sure you update App js to use api hook to get section data
-- Make search call to backend api using api hook, get results back
-- render results in the work area appropriately
-
+- for search form and results for section A Feature 1, make search fields and result table fields consistent.
+- when returned results are zero, make sure you show that message in the table (react-table surely has support for this)
+- change navbar code to make API call to get section names and features and render in a 2 level tree. We will hook them up to the main area later.
