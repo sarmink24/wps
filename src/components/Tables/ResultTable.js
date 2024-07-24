@@ -9,29 +9,43 @@ const ResultTable = ({ columns, data }) => {
 
   return (
     <div className="display-container">
-    <table {...getTableProps()} className="table">
-      <thead>
-        {headerGroups.map(headerGroup => (
-          <tr {...headerGroup.getHeaderGroupProps()}>
-            {headerGroup.headers.map(column => (
-              <th {...column.getHeaderProps()}>{column.render('Header')}</th>
-            ))}
-          </tr>
-        ))}
-      </thead>
-      <tbody {...getTableBodyProps()}>
-        {rows.map(row => {
-          prepareRow(row);
-          return (
-            <tr {...row.getRowProps()}>
-              {row.cells.map(cell => (
-                <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
-              ))}
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
+      <table {...getTableProps()} className="table">
+        <thead>
+          {headerGroups.map(headerGroup => {
+            const headerGroupProps = headerGroup.getHeaderGroupProps();
+            const { key: headerGroupKey, ...restHeaderGroupProps } = headerGroupProps;
+            return (
+              <tr key={headerGroupKey} {...restHeaderGroupProps}>
+                {headerGroup.headers.map(column => {
+                  const columnProps = column.getHeaderProps();
+                  const { key: columnKey, ...restColumnProps } = columnProps;
+                  return (
+                    <th key={columnKey} {...restColumnProps}>{column.render('Header')}</th>
+                  );
+                })}
+              </tr>
+            );
+          })}
+        </thead>
+        <tbody {...getTableBodyProps()}>
+          {rows.map(row => {
+            prepareRow(row);
+            const rowProps = row.getRowProps();
+            const { key: rowKey, ...restRowProps } = rowProps;
+            return (
+              <tr key={rowKey} {...restRowProps}>
+                {row.cells.map(cell => {
+                  const cellProps = cell.getCellProps();
+                  const { key: cellKey, ...restCellProps } = cellProps;
+                  return (
+                    <td key={cellKey} {...restCellProps}>{cell.render('Cell')}</td>
+                  );
+                })}
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     </div>
   );
 };

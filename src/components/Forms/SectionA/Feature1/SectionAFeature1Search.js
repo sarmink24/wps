@@ -21,11 +21,11 @@ const initialValues = {
 };
 
 // SearchForm component
-const SectionAFeature1Search = ({ onSearch, onReset }) => {
+const SectionAFeature1Search = ({ onSubmit }) => {
+
   // Reset form function
   const handleReset = (formikProps) => {
     formikProps.resetForm({ values: initialValues });
-    onReset(); // Call onReset callback
   };
 
   return (
@@ -33,7 +33,7 @@ const SectionAFeature1Search = ({ onSearch, onReset }) => {
       initialValues={initialValues}
       validationSchema={validationSchema}
       onSubmit={(values, { setSubmitting }) => {
-        onSearch(values); // Call the onSearch function with form values
+        onSubmit(values); // Call the submit handler passed in by parent component
         setSubmitting(false);
       }}
     >

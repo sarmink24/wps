@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import SectionCards from "./components/SectionCards/SectionCards";
 import SectionWorkArea from "./components/SectionWorkArea/SectionWorkArea";
-import useSectionsData from "./Hooks/useData";
+import useAPI from "./Hooks/useAPI";
 
 function App() {
-  const { sectionsData } = useSectionsData();
+  // Generic use API hook (that will be used for ALL api calls)
+  const { data, loading, error } = useAPI("http://localhost:5001/api/sections");
   const [workAreaProps, setWorkAreaProps] = useState({});
 
   const handleSectionClick = (sectionId, featureId, action) => {
@@ -21,11 +22,14 @@ function App() {
     <div className="app">
       <Navbar />
       <div className="section-container">
-        <SectionCards
-          sectionsData={sectionsData}
-          onSectionClick={handleSectionClick}
-        />
-        <SectionWorkArea workAreaProps={workAreaProps} />
+        {loading && <div>Loading...</div>}
+        {error && <div>Error: {error.message}</div>}
+        {data && (
+          <>
+            <SectionCards sectionsData={data} onSectionClick={handleSectionClick} />
+            <SectionWorkArea workAreaProps={workAreaProps} />
+          </>
+        )}
       </div>
     </div>
   );
