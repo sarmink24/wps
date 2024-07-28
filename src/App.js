@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./components/Navbar/Navbar1";
 import SectionCards from "./components/SectionCards/SectionCards";
 import SectionWorkArea from "./components/SectionWorkArea/SectionWorkArea";
 import useAPI from "./Hooks/useAPI";
