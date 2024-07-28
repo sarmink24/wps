@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div className="app">
-      <Navbar />
+      <Navbar sectionsData={data} />
       <div className="section-container">
         {loading && <div>Loading...</div>}
         {error && <div>Error: {error.message}</div>}

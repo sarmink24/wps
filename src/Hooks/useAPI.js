@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 const useAPI = (url, method = "GET", params = null) => {
   const [data, setData] = useState(null);
+  const [columns, setColumns] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -23,6 +24,7 @@ const useAPI = (url, method = "GET", params = null) => {
 
       const result = await response.json();
       setData(result);
+      setColumns(result.columns);
 
     } catch (error) {
       setError(error);
@@ -35,7 +37,7 @@ const useAPI = (url, method = "GET", params = null) => {
     fetchData();
   }, [url, method, params]);
 
-  return { data, loading, error };
+  return { data, columns, loading, error };
 };
 
 export default useAPI;
