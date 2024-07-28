@@ -38,17 +38,6 @@ const SectionWorkArea = ({
     form = <SectionAFeature1Create onSubmit={onSubmitHandler} />;
   }
 
-  // Since we no longer have columns, need to create them here and pass to Results Table.
-  // TODO: Column definitions should come from backend;
-  // let keys, cols;
-  // if (data && data.length > 0) {
-  //   keys = Object.keys(data[0]);
-  //   cols = keys.map((key) => ({
-  //     Header: key.charAt(0).toUpperCase() + key.slice(1),
-  //     accessor: key,
-  //   }));
-  // }
-
   return (
     <div className="section-work-area">
       {form}
@@ -65,7 +54,6 @@ const SectionWorkArea = ({
           <pre>{JSON.stringify(formData, null, 2)}</pre>
         </div>
       )}
-      <ResultTable data={data} columns={columns} />
     </div>
   );
 };
